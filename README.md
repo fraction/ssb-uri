@@ -15,13 +15,13 @@
 
 ## Install
 
-```
+```js
 npm install --save ssb-uri
 ```
 
 ## Usage
 
-```
+```js
 const ssbUri = require('ssb-uri')
 
 ssbUri.fromSigilLink('%g3hPVPDEO1Aj/uPl0+J2NlhFB2bbFLIHlty+YuqFZ3w=.sha256')
