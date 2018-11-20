@@ -4,7 +4,8 @@
   "description": "convert between SSB sigil links and SSB URIs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "standard --fix",
+    "test": "node test/*.js"
   },
   "author": "Fraction",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "ohm-js": "^0.14.0"
   },
   "devDependencies": {
-    "standard": "^12.0.1"
+    "standard": "^12.0.1",
+    "tape": "^4.9.1"
   }
 }
