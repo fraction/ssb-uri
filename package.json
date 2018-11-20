@@ -1,6 +1,6 @@
 {
   "name": "ssb-uri",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Uniform Resource Identifier (URI) utilities for Secure Scuttlebutt (SSB)",
   "main": "index.js",
   "scripts": {
