@@ -15,7 +15,7 @@
 
 ## Install
 
-```js
+```sh
 npm install --save ssb-uri
 ```
 

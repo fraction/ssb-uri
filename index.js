@@ -1,4 +1,4 @@
 module.exports = {
-  toSigilLink: require('./src/to-sigil-link'),
-  fromSigilLink: require('./src/from-sigil-link')
+  toSigilLink: require('./lib/to-sigil-link'),
+  fromSigilLink: require('./lib/from-sigil-link')
 }
