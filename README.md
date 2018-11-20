@@ -37,7 +37,7 @@ ssbUri.toSigilLink('ssb:message:sha256:g3hPVPDEO1Aj_uPl0-J2NlhFB2bbFLIHlty-YuqFZ
 
 Takes an SSB sigil link as input and returns an SSB URI. Any errors are thrown.
 
-### `ssbUri.toSigilLink(sigilLinkString)`
+### `ssbUri.toSigilLink(uriLinkString)`
 
 Takes an SSB URI as input and returns an SSB sigil link. Any errors are thrown.
 
