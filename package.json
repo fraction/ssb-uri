@@ -1,7 +1,7 @@
 {
   "name": "ssb-uri",
   "version": "1.0.0",
-  "description": "convert between SSB sigil links and SSB URIs",
+  "description": "Uniform Resource Identifier (URI) utilities for Secure Scuttlebutt (SSB)",
   "main": "index.js",
   "scripts": {
     "lint": "standard --fix",
