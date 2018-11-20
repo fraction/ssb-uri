@@ -1,9 +1,9 @@
-var fs = require('fs');
+var fs = require('fs')
 var path = require('path')
 var ohm = require('ohm-js')
 
 const grammarPath = path.join(__dirname, './grammar/ssb-uri.ohm')
-var g = ohm.grammar(fs.readFileSync(grammarPath));
+var g = ohm.grammar(fs.readFileSync(grammarPath))
 
 const sigils = {
   feed: '@',
@@ -43,7 +43,7 @@ var semantics = g.createSemantics().addOperation('toSigilLink', {
   base64Parts: function (part) {
     return unsafe64(this.sourceString)
   }
-});
+})
 
 module.exports = (uri) => {
   const match = g.match(uri)
