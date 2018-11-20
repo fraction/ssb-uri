@@ -1,6 +1,9 @@
 var fs = require('fs');
+var path = require('path')
 var ohm = require('ohm-js')
-var g = ohm.grammar(fs.readFileSync('./grammar/ssb-uri.ohm'));
+
+const grammarPath = path.join(__dirname, './grammar/ssb-uri.ohm')
+var g = ohm.grammar(fs.readFileSync(grammarPath));
 
 const sigils = {
   feed: '@',
