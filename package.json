@@ -1,12 +1,12 @@
 {
-  "name": "ohm-grammar-ssb-uri",
+  "name": "ssb-uri",
   "version": "1.0.0",
-  "description": "",
+  "description": "convert between SSB sigil links and SSB URIs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Fraction",
   "license": "ISC",
   "dependencies": {
     "ohm-js": "^0.14.0"

@@ -13,7 +13,7 @@ const sigils = {
 }
 
 const safe64 = (s) => {
-  return s.replace('+', '-').replace('/', '_')
+  return s.replace(/\+/g, '-').replace(/\//g, '_')
 }
 
 var semantics = g.createSemantics().addOperation('toSsbUri', {
@@ -21,8 +21,8 @@ var semantics = g.createSemantics().addOperation('toSsbUri', {
     return [
       'ssb',
       sigil.toSsbUri(),
-      base64.toSsbUri(),
-      commonAlgorithm.toSsbUri()
+      commonAlgorithm.toSsbUri(),
+      base64.toSsbUri()
     ].join(':')
   },
   sigil: function (str) {
