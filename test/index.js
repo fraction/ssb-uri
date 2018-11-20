@@ -38,3 +38,22 @@ test('feed to sigil link from URI', function (t) {
 
   t.equal(sigilLink, feed.sigilLink);
 });
+
+const blob = {
+  sigilLink: '&sbBmsB7XWvmIzkBzreYcuzPpLtpeCMDIs6n/OJGSC1U=.sha256',
+  uri: 'ssb:blob:sha256:sbBmsB7XWvmIzkBzreYcuzPpLtpeCMDIs6n_OJGSC1U='
+}
+
+test('blob from sigil link to URI', function (t) {
+  t.plan(1);
+  const uri = ssbUri.fromSigilLink(blob.sigilLink)
+
+  t.equal(uri, blob.uri,);
+});
+
+test('blob to sigil link from URI', function (t) {
+  t.plan(1)
+  const sigilLink = ssbUri.toSigilLink(blob.uri)
+
+  t.equal(sigilLink, blob.sigilLink);
+});
