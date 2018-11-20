@@ -1,0 +1,100 @@
+ssbURI {
+
+
+  uriCommon = scheme commonType commonAlgorithm integerBase64
+
+  queryPart = "?" uric*
+
+  fragmentPart = "#" uric*
+
+  uric = reserved | unreserved | escaped
+
+  reserved    = ";" | "/" | "?" | ":" | "@" | "&" | "=" | "+" |
+                    "$" | ","
+
+  escaped     = "%" hexDigit hexDigit
+
+  scheme = "ssb"
+
+  unreserved = alnum | mark
+
+  mark          = "-" | "_" | "." | "!" | "~" | "*" | "'" |
+                      "(" | ")"
+
+  pctEncoded
+    = "%"
+    | hexDigit
+
+  subDelims 
+    = "!"
+    | "$"
+    | "&"
+    | "'"
+    | "("
+    | ")"
+    | "*"
+    | "+"
+    | "," 
+    | ";" 
+    | "="
+
+  segmentNzNcParts
+    = unreserved
+    | pctEncoded
+    | subDelims 
+    | "@"
+
+  segmentNzNc = segmentNzNcParts+
+
+  pcharParts
+    = unreserved
+    | pctEncoded
+    | subDelims
+    | ":"
+    | "@"
+
+  pchar = pcharParts*
+
+  fragmentParts
+    = pcharParts
+    | "/"
+    | "?"
+
+  fragment = fragmentParts*
+
+  delimiter = ":"
+
+  segmentPart = (delimiter segmentNzNc)+
+
+  type = delimiter unreserved*
+
+  commonTypePart
+    = "feed"
+    | "message"
+    | "blob"
+    | "channel"
+
+  commonType = delimiter commonTypePart
+
+  algorithm = delimiter unreserved*
+
+  commonAlgorithmParts
+    = "sha256"
+    | "ed25519"
+
+  commonAlgorithm = delimiter commonAlgorithmParts
+
+  integerPart
+    = delimiter
+    | unreserved
+
+  integer = integerPart*
+
+  base64Parts
+    = alnum
+    | "-"
+    | "_"
+    | "="
+
+  integerBase64 = delimiter base64Parts*
+}
