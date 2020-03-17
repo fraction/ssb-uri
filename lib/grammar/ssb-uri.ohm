@@ -1,7 +1,7 @@
 ssbURI {
 
 
-  uriCommon = scheme commonType commonAlgorithm integerBase64
+  uriCommon = scheme commonType commonAlgorithm encodedBase64
 
   queryPart = "?" uric*
 
@@ -14,7 +14,7 @@ ssbURI {
 
   escaped     = "%" hexDigit hexDigit
 
-  scheme = "ssb"
+  scheme = "ssb:"
 
   unreserved = alnum | mark
 
@@ -62,7 +62,7 @@ ssbURI {
 
   fragment = fragmentParts*
 
-  delimiter = ":"
+  delimiter = "/"
 
   segmentPart = (delimiter segmentNzNc)+
 
@@ -74,7 +74,7 @@ ssbURI {
     | "blob"
     | "channel"
 
-  commonType = delimiter commonTypePart
+  commonType = commonTypePart
 
   algorithm = delimiter unreserved*
 
@@ -95,6 +95,7 @@ ssbURI {
     | "-"
     | "_"
     | "="
+    | "%"
 
-  integerBase64 = delimiter base64Parts*
+  encodedBase64 = delimiter base64Parts*
 }
