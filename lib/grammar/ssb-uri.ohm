@@ -1,100 +1,22 @@
 ssbURI {
 
-
-  uriCommon = scheme commonType commonAlgorithm integerBase64
-
-  queryPart = "?" uric*
-
-  fragmentPart = "#" uric*
-
-  uric = reserved | unreserved | escaped
-
-  reserved    = ";" | "/" | "?" | ":" | "@" | "&" | "=" | "+" |
-                    "$" | ","
-
-  escaped     = "%" hexDigit hexDigit
+  uriCommon =
+    scheme
+    delimiter
+    type
+    delimiter
+    algorithm
+    delimiter
+    base64*
 
   scheme = "ssb"
 
-  unreserved = alnum | mark
-
-  mark          = "-" | "_" | "." | "!" | "~" | "*" | "'" |
-                      "(" | ")"
-
-  pctEncoded
-    = "%"
-    | hexDigit
-
-  subDelims 
-    = "!"
-    | "$"
-    | "&"
-    | "'"
-    | "("
-    | ")"
-    | "*"
-    | "+"
-    | "," 
-    | ";" 
-    | "="
-
-  segmentNzNcParts
-    = unreserved
-    | pctEncoded
-    | subDelims 
-    | "@"
-
-  segmentNzNc = segmentNzNcParts+
-
-  pcharParts
-    = unreserved
-    | pctEncoded
-    | subDelims
-    | ":"
-    | "@"
-
-  pchar = pcharParts*
-
-  fragmentParts
-    = pcharParts
-    | "/"
-    | "?"
-
-  fragment = fragmentParts*
-
   delimiter = ":"
 
-  segmentPart = (delimiter segmentNzNc)+
+  type = "feed" | "message" | "blob" | "channel"
 
-  type = delimiter unreserved*
+  algorithm = "sha256" | "ed25519"
 
-  commonTypePart
-    = "feed"
-    | "message"
-    | "blob"
-    | "channel"
+  base64 = alnum | "-" | "_" | "="
 
-  commonType = delimiter commonTypePart
-
-  algorithm = delimiter unreserved*
-
-  commonAlgorithmParts
-    = "sha256"
-    | "ed25519"
-
-  commonAlgorithm = delimiter commonAlgorithmParts
-
-  integerPart
-    = delimiter
-    | unreserved
-
-  integer = integerPart*
-
-  base64Parts
-    = alnum
-    | "-"
-    | "_"
-    | "="
-
-  integerBase64 = delimiter base64Parts*
 }

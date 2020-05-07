@@ -22,12 +22,14 @@ npm install --save ssb-uri
 ## Usage
 
 ```js
-const ssbUri = require('ssb-uri')
+const ssbUri = require("ssb-uri");
 
-ssbUri.fromSigilLink('%g3hPVPDEO1Aj/uPl0+J2NlhFB2bbFLIHlty+YuqFZ3w=.sha256')
+ssbUri.fromSigilLink("%g3hPVPDEO1Aj/uPl0+J2NlhFB2bbFLIHlty+YuqFZ3w=.sha256");
 // => 'ssb:message:sha256:g3hPVPDEO1Aj_uPl0-J2NlhFB2bbFLIHlty-YuqFZ3w='
 
-ssbUri.toSigilLink('ssb:message:sha256:g3hPVPDEO1Aj_uPl0-J2NlhFB2bbFLIHlty-YuqFZ3w=')
+ssbUri.toSigilLink(
+  "ssb:message:sha256:g3hPVPDEO1Aj_uPl0-J2NlhFB2bbFLIHlty-YuqFZ3w="
+);
 // => '%g3hPVPDEO1Aj/uPl0+J2NlhFB2bbFLIHlty+YuqFZ3w=.sha256'
 ```
 
